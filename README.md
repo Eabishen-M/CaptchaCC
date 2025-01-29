@@ -34,7 +34,7 @@ Add a container element where the captcha will be generated. You can specify the
 ```
 
 ### JavaScript Initialization
-Call the ```html captcha() ``` function, passing in an options object if you want to customize the captcha.
+Call the ``` captcha() ``` function, passing in an options object if you want to customize the captcha.
 
 ```javascript
 window.addEventListener('DOMContentLoaded', (event) => {
