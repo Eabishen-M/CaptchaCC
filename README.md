@@ -18,3 +18,8 @@ Include the JavaScript file in your HTML:
 
 ```html
 <script src="path/to/captcha.js"></script>
+
+<div id="myCaptchaContainer"></div>
+<form id="myForm">
+  <button type="submit">Submit</button>
+</form>
