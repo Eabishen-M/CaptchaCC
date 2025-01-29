@@ -19,6 +19,15 @@ Include the JavaScript file in your HTML:
 ```html
 <script src="path/to/captcha.js"></script>
 
+
+```html
+
+## Usage
+
+### HTML Structure
+Add a container element where the captcha will be generated. You can specify the ID of this container or use the default `captchaCC`.
+
+```html
 <div id="myCaptchaContainer"></div>
 <form id="myForm">
   <button type="submit">Submit</button>
