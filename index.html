@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Captcha generator</title>
+  </head>
+  <body>
+    <form id="formId" action="">
+      <input type="text" />
+      <div id="captchaCC"></div>
+      <button type="submit">submit</button>
+    </form>
+
+    <script src="captchaJS.js"></script>
+    <script type="text/javascript">
+      const captchaInstance = captcha({
+        captchaLabelId: "customTest",
+        errorDivId: "customError",
+      });
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!captchaInstance.validateCaptcha()) {
+          return;
+        }
+
+        console.log("Captcha validation successful.");
+      };
+
+      document
+        .querySelector("#formId")
+        .addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>
