@@ -23,7 +23,7 @@ Include the JavaScript file in your HTML:
 
 ## Usage
 
-### HTML Structure
+### HTML Structure 
 Add a container element where the captcha will be generated. You can specify the ID of this container or use the default `captchaCC`.
 
 ```html
@@ -31,4 +31,33 @@ Add a container element where the captcha will be generated. You can specify the
 <form id="myForm">
   <button type="submit">Submit</button>
 </form>
+```
+
+### JavaScript Initialization
+Call the ```html captcha() ``` function, passing in an options object if you want to customize the captcha.
+
+```html
+window.addEventListener('DOMContentLoaded', (event) => {
+  const myCaptcha = captcha({
+    defaultElement: "myCaptchaContainer", // Optional: Specify your container
+    idCaptchaInput: "myCaptchaInput",     // Optional: ID for the input field
+    captchaLabelId: "myCaptchaLabel",     // Optional: ID for the label
+    errorDivId: "myCaptchaError",         // Optional: ID for the error div
+    CaptchaPlaceholderText: "Enter the sum", // Optional: Placeholder text
+    errorMessage: "Incorrect answer. Please try again.", // Optional: Error message
+    inputClass: "captcha-input",           // Optional: CSS class for the input
+    numberClass: "captcha-number",         // Optional: CSS class for the numbers
+    operationClass: "captcha-symbol"       // Optional: CSS class for the operators and equals
+  });
+
+  const form = document.getElementById('myForm');
+  form.addEventListener('submit', function(event) {
+    if (!myCaptcha.validateCaptcha()) {
+      event.preventDefault(); // Prevent form submission if captcha is invalid
+    } else {
+      // Handle form submission
+      alert("Captcha Validated!");
+    }
+  });
+});
 ```
